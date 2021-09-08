@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+    {% block head %}
+
+
+<h1>Список подарков</h1>
+<!--    {% block head %}-->
+<!--        <title>{{ title }}</title>-->
+<!--      {% endblock %}-->
+{% for product in wishlist.product.all %}
+<a href="{{ product.link }}">{{product.title}}</a>
+{% endfor %}
+{% endblock %}
