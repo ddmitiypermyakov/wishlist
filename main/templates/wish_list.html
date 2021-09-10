@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-    {% block head %}
+    {% block body %}
 
 
 <h1>Список подарков</h1>
@@ -8,5 +8,12 @@
 <!--      {% endblock %}-->
 {% for product in wishlist.product.all %}
 <a href="{{ product.link }}">{{product.title}}</a>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <buttom type="submit"> ADD</buttom>
+
+</form>
+
 {% endfor %}
 {% endblock %}
